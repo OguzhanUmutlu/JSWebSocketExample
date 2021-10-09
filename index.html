@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+const ws = new WebSocket("ws://localhost:8080");
+ws.onopen = ev => {
+    console.log("Web socket is open!");
+    console.log(ev)
+}
+ws.onerror = ev => {
+    console.log("Web socket got an error!");
+    console.log(ev);
+}
+ws.onmessage = ev => {
+    console.log("Web socket got a message!");
+    console.log(ev);
+}
+ws.onclose = ev => {
+    console.log("Web socket got closed!");
+    console.log(ev);
+}
+</script>
+</body>
+</html>
